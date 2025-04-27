@@ -19,7 +19,8 @@
 				"DavidAnson.vscode-markdownlint",
 				"shd101wyy.markdown-preview-enhanced",
 				"bierner.github-markdown-preview",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"mhutchie.git-graph"
 			]
 		}
 	}
