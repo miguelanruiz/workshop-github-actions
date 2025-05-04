@@ -1,0 +1,35 @@
+[project]
+name = "fastapi-poetry-deploy-example"
+description = "Example FastAPI Application for Testing Containerized Build and Deploy"
+license = { file = "../LICENSE" }
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Juan Caviedes", email = "juan.caviedes@neoris.com" },
+]
+maintainers = [
+    { name = "Juan Caviedes", email = "juan.caviedes@neoris.com" },
+]
+dynamic = [ "version" ]
+keywords = [ "packaging", "poetry" ]
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: FastAPI",
+]
+
+[project.urls]
+homepage = "https://github.com/caprivm/workshop-github-actions/tree/main/python/"
+repository = "https://github.com/caprivm/workshop-github-actions/"
+documentation = "https://github.com/caprivm/workshop-github-actions/tree/main/python/README.md"
+"Bug Tracker" = "https://github.com/caprivm/workshop-github-actions/issues"
+
+[tool.poetry]
+version = "0.0.1"
+
+[tool.poetry.dependencies]
+fastapi = "^0.115.12"
+requests = "^2.32.3"
