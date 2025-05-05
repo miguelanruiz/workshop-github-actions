@@ -57,6 +57,11 @@ match = "(main|master)"
 prerelease_token = "rc"
 prerelease = false
 
+[tool.semantic_release.branches.develop]
+match = "(dev).+"
+prerelease_token = "dev"
+prerelease = false
+
 [tool.semantic_release.changelog]
 changelog_file = ""
 exclude_commit_patterns = []
