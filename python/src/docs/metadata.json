@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Health",
+        "description": "Health check endpoint."
+    },
+    {
+        "name": "GitHub",
+        "description": "GitHub status endpoint."
+    }
+]

@@ -23,6 +23,12 @@
 				"mhutchie.git-graph"
 			]
 		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"version": "3.12"
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

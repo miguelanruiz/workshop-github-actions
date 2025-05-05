@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment-specific files
+.env
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this.txt
+*.egg-info/
+
+# Installers
+.install/
+install_manifest.txt
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.whl
+*.tar.gz
+*.rpm
+
+# OS or Editor related files
+.DS_Store
+.git
+.hg
+.svn
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Other temporary files
+*.log
+*.pyc
+tmp/
+temp/
