@@ -68,7 +68,6 @@ prerelease_token = "dev"
 prerelease = false
 
 [tool.semantic_release.changelog]
-changelog_file = ""
 exclude_commit_patterns = []
 mode = "init"
 insertion_flag = "<!-- version list -->"
@@ -111,6 +110,7 @@ name = "origin"
 type = "github"
 ignore_token_for_push = false
 insecure = false
+token = { env = "GITHUB_TOKEN" }
 
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
