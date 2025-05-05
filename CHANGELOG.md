@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## v0.1.0+dev-chainguard-docker (2025-05-04)
+## v0.1.0 (2025-05-04)
 
 ### Bug Fixes
 
