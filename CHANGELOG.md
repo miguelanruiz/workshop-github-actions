@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.2.0 (2025-05-04)
+
+### Features
+
+- Improve Dockerfile
+  ([`929e62f`](https://github.com/caprivm/workshop-github-actions/commit/929e62fabe429fba877a9c6b58181fd6d9066b76))
+
+
 ## v0.1.0 (2025-05-04)
 
 ### Bug Fixes
