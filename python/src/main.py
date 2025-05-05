@@ -1,6 +1,7 @@
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
+from configs.config_version import __version__
 from pathlib import Path
 from routers import (
     router_github,
@@ -17,7 +18,7 @@ app = FastAPI(
     title="FastAPI Containerized Build Deploy Example",
     description=description.read(),
     contact={"name": "DevTools"},
-    version="0.1.0",
+    version=__version__,
     docs_url="/docs",
     redoc_url=None,
     servers=[{"url": "/", "description": "Root URL"}],
