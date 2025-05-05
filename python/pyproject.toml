@@ -52,11 +52,6 @@ no_git_verify = false
 tag_format = "v{version}"
 version_variables = ["src/configs/config_version.py:__version__"]
 
-[tool.semantic_release.branches.dev]
-match = ".+"
-prerelease = true
-prerelease_token = "dev"
-
 [tool.semantic_release.branches.main]
 match = "(main|master)"
 prerelease_token = "rc"
