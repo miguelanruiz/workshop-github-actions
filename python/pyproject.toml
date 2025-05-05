@@ -58,7 +58,7 @@ prerelease_token = "rc"
 prerelease = false
 
 [tool.semantic_release.branches.develop]
-match = "(dev).+"
+match = "^dev.*"
 prerelease_token = "dev"
 prerelease = false
 
