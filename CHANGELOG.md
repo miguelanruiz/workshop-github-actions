@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## v0.0.1 (2025-05-04)
+## v0.1.0 (2025-05-04)
 
 ### Bug Fixes
 
@@ -16,3 +16,14 @@
 
 - Update pyproject.toml
   ([`a7c50c5`](https://github.com/caprivm/workshop-github-actions/commit/a7c50c52856efcc38b9582537e9475cd1f339ef3))
+
+### Features
+
+- Add develop branches
+  ([`4dd4bcc`](https://github.com/caprivm/workshop-github-actions/commit/4dd4bccec819f7bce63ba6df4d0766d9edaf47c4))
+
+- Add develop branches
+  ([`78510d3`](https://github.com/caprivm/workshop-github-actions/commit/78510d3bfe80ff03b38ebf90aca6baaad1a5f246))
+
+- Add develop branches
+  ([`fe35f9e`](https://github.com/caprivm/workshop-github-actions/commit/fe35f9e4f0d730a49a2a5a4539755651b10d87c2))

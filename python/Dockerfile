@@ -2,10 +2,6 @@
 FROM cgr.dev/chainguard/python:latest-dev AS dev
 USER root
 
-#$ Get the Build Arguments
-ARG APP_VERSION
-ARG REPO_URL
-
 ## Create the Application Directory and Virtual Environment
 WORKDIR /fastapi-app
 RUN python -m venv .venv
@@ -16,10 +12,8 @@ ENV PATH="/fastapi-app/.venv/bin:$PATH" \
 RUN pip install poetry tomlkit
 
 ## Install the Application Dependencies
-ENV APP_VERSION=${APP_VERSION}
 COPY [".", "./"]
-RUN sed -i.bak "s/__placeholder__/$APP_VERSION/" pyproject.toml
-RUN poetry install
+RUN poetry install --project /fastapi-app/python --no-root
 
 ## Copy the Application Source Code
 FROM cgr.dev/chainguard/python:latest
@@ -33,4 +27,4 @@ ENV PATH="/fastapi-app/.venv/bin:${PATH}" \
 
 ## Run the FastAPI application
 EXPOSE 8000
-CMD ["/fastapi-app/.venv/bin/fastapi", "run", "src/main.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/fastapi-app/.venv/bin/fastapi", "run", "python/src/main.py", "--port", "8000", "--host", "0.0.0.0"]

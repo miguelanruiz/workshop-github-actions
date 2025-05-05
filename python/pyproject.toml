@@ -28,7 +28,7 @@ documentation = "https://github.com/caprivm/workshop-github-actions/tree/main/py
 "Bug Tracker" = "https://github.com/caprivm/workshop-github-actions/issues"
 
 [tool.poetry]
-version = "0.0.1"
+version = "0.1.0"
 package-mode = false
 
 [tool.poetry.dependencies]
@@ -50,7 +50,12 @@ major_on_zero = true
 allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
-version_variables = ["src/configs/config_version.py:__version__"]
+version_variables = [
+    "src/configs/config_version.py:__version__"
+]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
 
 [tool.semantic_release.branches.main]
 match = "(main|master)"
@@ -58,19 +63,18 @@ prerelease_token = "rc"
 prerelease = false
 
 [tool.semantic_release.branches.develop]
-match = "^dev.*"
+match = "^(dev)-.+"
 prerelease_token = "dev"
 prerelease = false
 
 [tool.semantic_release.changelog]
-changelog_file = ""
 exclude_commit_patterns = []
 mode = "init"
 insertion_flag = "<!-- version list -->"
 template_dir = "templates"
 
 [tool.semantic_release.changelog.default_templates]
-changelog_file = "CHANGELOG.md"
+changelog_file = "../CHANGELOG.md"
 output_format = "md"
 mask_initial_release = false
 
@@ -106,6 +110,7 @@ name = "origin"
 type = "github"
 ignore_token_for_push = false
 insecure = false
+token = { env = "GITHUB_TOKEN" }
 
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
