@@ -14,7 +14,7 @@ on:
           - "3.9"
         default: "3.13"
       containerized:
-        description: "Build a containerized version of the package"
+        description: "Build a container version of the application"
         required: false
         type: boolean
         default: false
