@@ -22,6 +22,7 @@ jobs:
       # Use the setup-release action to create a release
       - name: Create Release
         id: create-release
+        working-directory: python
         uses: ./.github/actions/setup-release
         with:
           python-version: ${{ github.event.inputs.python-version || '3.13' }}
