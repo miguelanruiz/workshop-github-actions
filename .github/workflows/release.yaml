@@ -13,6 +13,13 @@ jobs:
       contents: write
       id-token: write
     steps:
+      # Checkout to be able to use the release action
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Use the setup-release action to create a release
       - name: Create Release
         id: create-release
         uses: ./.github/actions/setup-release
