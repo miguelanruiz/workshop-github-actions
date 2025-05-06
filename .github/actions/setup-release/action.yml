@@ -42,4 +42,5 @@ runs:
       working-directory: "./python"
       shell: bash
       run: |
+        source .venv/bin/activate
         semantic-release --noop version --vcs-release --changelog --as-prerelease
