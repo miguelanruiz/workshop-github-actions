@@ -45,6 +45,10 @@ ruff = "^0.11.8"
 [tool.poetry.scripts]
 test = "scripts:__main__"
 
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.semantic_release]
 assets = []
 build_command_env = []
