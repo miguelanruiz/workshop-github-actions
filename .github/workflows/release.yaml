@@ -13,7 +13,7 @@ jobs:
       contents: write
       id-token: write
     defaults:
-      runs:
+      run:
         shell: bash
         working-directory: "./python"
     steps:
