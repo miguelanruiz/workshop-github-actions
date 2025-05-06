@@ -24,7 +24,7 @@ runs:
       run: |
         python -m venv .venv
         source .venv/bin/activate
-        echo "$(pwd)/.venv/bin" >> "$GITHUB_PATH"
+        echo "PATH=$(pwd)/.venv/bin:${PATH}" >> "$GITHUB_ENV"
 
     - name: Install Dependency Manager 
       shell: bash
@@ -42,5 +42,4 @@ runs:
       working-directory: "./python"
       shell: bash
       run: |
-        source .venv/bin/activate
         semantic-release --noop version --vcs-release --changelog --as-prerelease
