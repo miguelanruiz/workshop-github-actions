@@ -35,4 +35,4 @@ runs:
       working-directory: "./python"
       shell: bash
       run: |
-        poetry run semantic-release --noop version --vcs-release --changelog --as-prerelease
+        poetry run semantic-release version --vcs-release --changelog --as-prerelease
