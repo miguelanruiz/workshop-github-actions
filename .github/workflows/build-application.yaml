@@ -1,0 +1,45 @@
+name: Build the Python Application
+on:
+  workflow_dispatch:
+    inputs:
+      python-version:
+        description: "Python version to use"
+        required: false
+        type: choice
+        options:
+          - "3.13"
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          - "3.9"
+        default: "3.13"
+      containerized:
+        description: "Build a containerized version of the package"
+        required: false
+        type: boolean
+        default: false
+
+env:
+  PYTHON_VERSION: ${{ github.event.inputs.python-version || '3.13' }}
+
+jobs:
+  build-package:
+    name: Build the Python Package
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: read
+    steps:
+      ## Set an Initial Step
+      - name: Workshop Initial Step
+        run: |
+          echo "Hello World!"
+  
+  # build-container:
+  #   name: Build the Python Container
+  #   if: ${{ github.event.inputs.containerized == 'true' }}
+  #   uses: ./.github/workflows/build-container.yaml
+  #   secrets:
+  #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+  #   with:
+  #     python-version: ${{ env.PYTHON_VERSION }}
