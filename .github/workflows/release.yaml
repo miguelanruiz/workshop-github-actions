@@ -1,0 +1,23 @@
+name: Create a Release in GitHub
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  create-release:
+    name: Create a Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Create Release
+        id: create-release
+        uses: ./.github/actions/setup-release
+        with:
+          python-version: ${{ github.event.inputs.python-version || '3.13' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_COMMIT_AUTHOR: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"

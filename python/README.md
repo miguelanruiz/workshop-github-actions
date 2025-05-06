@@ -1,10 +1,10 @@
-# Paved Road Testing: Poetry Python Example
+# Poetry Python Example
 
 This is an application example for testing.
 
 ## Table of Contents
 
-- [Paved Road Testing: Poetry Python Example](#paved-road-testing-poetry-python-example)
+- [Poetry Python Example](#poetry-python-example)
   - [Table of Contents](#table-of-contents)
   - [Configuring Your Project](#configuring-your-project)
   - [Legal](#legal)

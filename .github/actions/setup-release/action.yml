@@ -1,0 +1,37 @@
+name: Setup the Release Dependencies
+description: |
+  This action sets up the release dependencies for the Python application.
+  It installs the required dependencies and prepares the environment for the release process.
+  The action is designed to be reusable and can be called from other workflows.
+  It uses the `setup-python` action to set up the Python environment and install the required dependencies.
+inputs:
+  python-version:
+    description: |
+      Python version to use for the release process.
+    required: false
+    default: "3.13"
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: "poetry"
+
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install --upgrade poetry
+        poetry install --with dev
+
+    - name: Create Release
+      working-directory: ${{ github.workspace }}/python
+      run: |
+        semantic-release --noop version --vcs-release --changelog --as-prerelease
