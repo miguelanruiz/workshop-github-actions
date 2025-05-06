@@ -18,16 +18,21 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ inputs.python-version }}
-        cache: "poetry"
 
-    - name: Install Dependencies
+    - name: Install Dependency Manager 
       shell: bash
       run: |
         pip install --upgrade pip
         pip install --upgrade poetry
+    
+    - name: Install Dependencies
+      working-directory: "./python"
+      shell: bash
+      run: |
         poetry install --with dev
 
     - name: Create Release
+      working-directory: "./python"
       shell: bash
       run: |
-        semantic-release --noop version --vcs-release --changelog --as-prerelease
+        poetry run semantic-release --noop version --vcs-release --changelog --as-prerelease
