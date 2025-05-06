@@ -5,6 +5,6 @@
     },
     {
         "name": "GitHub",
-        "description": "GitHub status endpoint."
+        "description": "GitHub services status endpoint."
     }
 ]

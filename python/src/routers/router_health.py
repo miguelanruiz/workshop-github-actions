@@ -10,7 +10,6 @@ router = APIRouter()
 
 @router.get(
     path="/health",
-    description="Get the health of the client",
     name="health",
     include_in_schema=True,
 )
@@ -19,7 +18,7 @@ def get_github_status(
     request: Request,
 ) -> JSONResponse:
     """
-    Endpoint to get the health of the client.
+    Endpoint to get the health of the client. This endpoint displays some characteristics of the server running the application.
     """
     try:
         system_info = {

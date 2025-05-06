@@ -28,7 +28,7 @@ documentation = "https://github.com/caprivm/workshop-github-actions/tree/main/py
 "Bug Tracker" = "https://github.com/caprivm/workshop-github-actions/issues"
 
 [tool.poetry]
-version = "0.1.0"
+version = "0.2.0"
 package-mode = false
 
 [tool.poetry.dependencies]
@@ -51,10 +51,10 @@ allow_zero_version = true
 no_git_verify = false
 tag_format = "v{version}"
 version_variables = [
-    "src/configs/config_version.py:__version__"
+    "src/configs/config_version.py:__version__",
 ]
 version_toml = [
-    "pyproject.toml:tool.poetry.version"
+    "pyproject.toml:tool.poetry.version",
 ]
 
 [tool.semantic_release.branches.main]

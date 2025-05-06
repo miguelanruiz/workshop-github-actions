@@ -9,7 +9,6 @@ router = APIRouter()
 
 @router.get(
     path="/github-status",
-    description="Get the GitHub status",
     name="github-status",
     include_in_schema=True,
 )
@@ -18,7 +17,7 @@ def get_github_status(
     request: Request,
 ) -> JSONResponse:
     """
-    Endpoint to get the GitHub status.
+    Endpoint to get the GitHub status. The GitHub status page is `https://www.githubstatus.com/api/v2/status.json`.
     """
     headers = {
         "Accept": "application/json",
