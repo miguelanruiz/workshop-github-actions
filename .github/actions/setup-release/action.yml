@@ -19,14 +19,20 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
 
-    - name: Install Dependencies
+    - name: Install Dependency Manager 
       shell: bash
       run: |
         pip install --upgrade pip
         pip install --upgrade poetry
+    
+    - name: Install Dependencies
+      working-directory: "./python"
+      shell: bash
+      run: |
         poetry install --with dev
 
     - name: Create Release
+      working-directory: "./python"
       shell: bash
       run: |
         semantic-release --noop version --vcs-release --changelog --as-prerelease

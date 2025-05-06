@@ -19,6 +19,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: "./python"
     steps:
       # Checkout to be able to use the release action
       - name: Checkout
@@ -30,7 +31,6 @@ jobs:
       - name: Create Release
         id: create-release
         uses: ./.github/actions/setup-release
-        working-directory: "./python"
         with:
           python-version: ${{ github.event.inputs.python-version || '3.13' }}
         env:
