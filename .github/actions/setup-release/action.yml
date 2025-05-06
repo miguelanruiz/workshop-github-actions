@@ -19,12 +19,6 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
 
-    - name: Create a virtual environment
-      shell: bash
-      run: |
-        python -m venv .venv
-        source .venv/bin/activate
-
     - name: Install Dependency Manager 
       shell: bash
       run: |
