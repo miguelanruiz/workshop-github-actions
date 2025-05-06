@@ -29,6 +29,5 @@ runs:
 
     - name: Create Release
       shell: bash
-      working-directory: ${{ github.workspace }}/python
       run: |
         semantic-release --noop version --vcs-release --changelog --as-prerelease
