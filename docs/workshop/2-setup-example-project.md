@@ -77,6 +77,14 @@ Run build
 poetry build
 ```
 
+> [!NOTE]
+> If you want to publish the package to a Python Package Index like [`test.pypi`](https://test.pypi.org/) or [`pypi`](https://pypi.org/), you can use the following commands.
+>
+> ```bash
+> poetry config repositories.testpypi https://test.pypi.org/legacy/
+> poetry publish --repository testpypi --username __token__ --password ${TEST_PYPI_API_TOKEN} # --build --dry-run
+>```
+
 ### Execute the Application
 
 If you want to see what the application does, you can run the next command in the `python` subfolder of the project.
@@ -137,5 +145,20 @@ Add two steps to the previous job:
 | Upload Artifact        | [`actions/upload-artifact`](https://github.com/actions/upload-artifact)         |
 | Publish to PyPi Action | [`pypa/gh-action-pypi-publish`](https://github.com/pypa/gh-action-pypi-publish) |
 
+For the _Publish to PyPi Action_ the suggested structure to use is below.
+
+```yaml
+- name: Upload Python Project to the Registry
+  uses: pypa/gh-action-pypi-publish@v1.12.4
+  with:
+    user:
+    password:
+    repository-url:
+    packages-dir:
+    attestations: true
+```
+
 > [!IMPORTANT]
-> To publish to PyPi we need to set up a `PYPI_API_TOKEN`
+> To publish to PyPi we need to set up a `PYPI_API_TOKEN` that will be the `password` input.
+>
+> - If we want _trusted publishing_, we need `id-token: write` set in the job. Details of the permissions [here](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
