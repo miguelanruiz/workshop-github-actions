@@ -14,11 +14,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
@@ -26,12 +21,14 @@ runs:
         cache: "poetry"
 
     - name: Install Dependencies
+      shell: bash
       run: |
         pip install --upgrade pip
         pip install --upgrade poetry
         poetry install --with dev
 
     - name: Create Release
+      shell: bash
       working-directory: ${{ github.workspace }}/python
       run: |
         semantic-release --noop version --vcs-release --changelog --as-prerelease
