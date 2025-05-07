@@ -10,6 +10,12 @@ inputs:
       Python version to use for the release process.
     required: false
     default: "3.13"
+  prerelease:
+    description: |
+      Whether to create a pre-release version.
+      This is useful for testing purposes.
+    required: false
+    default: "false"
 
 runs:
   using: composite
@@ -35,4 +41,8 @@ runs:
       working-directory: "./python"
       shell: bash
       run: |
-        poetry run semantic-release version --vcs-release --changelog --as-prerelease
+        if [ "${{ inputs.prerelease }}" == "true" ]; then
+          poetry run semantic-release version --vcs-release --changelog --as-prerelease
+        else
+          poetry run semantic-release version --vcs-release --changelog
+        fi

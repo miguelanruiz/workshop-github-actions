@@ -8,13 +8,19 @@ on:
           At the time of writing the workflow, the version is 3.13. Link: https://images.chainguard.dev/directory/image/python/versions
         required: true
         type: string
+      push:
+        description: |
+          Push the container image to Docker Hub.
+          This should be set to true if you want to push the image.
+        required: true
+        type: boolean
+        default: false
     secrets:
       DOCKER_HUB_TOKEN:
         description: |
           Docker Hub token for pushing the container image.
           This token should have write access to the repository.
         required: true
-        type: string
 
 jobs:
   build-container:

@@ -43,3 +43,4 @@ jobs:
   #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
   #   with:
   #     python-version: ${{ env.PYTHON_VERSION }}
+  #     push: true
