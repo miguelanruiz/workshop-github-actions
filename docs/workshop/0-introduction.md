@@ -24,8 +24,6 @@ _GitHub Actions is a continuous integration and continuous delivery (CI/CD) plat
 > [!IMPORTANT]
 > GitHub Actions can help you automate nearly every aspect of your application development processes.
 
-_Reference: [1](#references)_
-
 ## Pricing
 
 GitHub Actions billing depends on your plan, the use of GitHub-hosted runners, the type of machine, and other factors. Key details are below:
@@ -43,8 +41,6 @@ A _self-hosted_ runner is a system that you deploy and manage to execute jobs fr
 > - Supported Architectures [here](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/supported-architectures-and-operating-systems-for-self-hosted-runners).
 > - Calculator on AWS [here](https://runs-on.com/calculator/).
 
-_References: [2-6](#references)_
-
 ## Who uses GitHub Actions?
 
 Currently, millions of organizations are registered with GitHub Enterprise.
@@ -55,8 +51,6 @@ Currently, millions of organizations are registered with GitHub Enterprise.
 >
 > - All the customer stories [here](https://github.com/customer-stories/all).
 > - GitHub Blog for CI/CD [here](https://github.blog/enterprise-software/ci-cd/).
-
-_References: [6-8](#references)_
 
 ## References
 

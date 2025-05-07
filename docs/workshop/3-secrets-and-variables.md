@@ -21,21 +21,15 @@ In your repository, in the _Settings_ tab, you can modify secrets and variables 
 
 ![New repository secret](../images/example-create-a-secret.png)
 
-Now, create the `PYPI_API_TOKEN` secret and assign it an appropriate value.
-
-> [!TIP]
-> To use the secret in a GitHub Actions workflow follow [these instructions](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#using-secrets-in-a-workflow).
+Now, create the `PYPI_API_TOKEN` secret and assign it an appropriate value. To use the secret in a GitHub Actions workflow follow [these instructions](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#using-secrets-in-a-workflow).
 
 ## Create a Variable
 
-In the same page, let's create the `GIT_COMMIT_AUTHOR` variable at repository level. An example of the value below.
+In the same page, let's create the `GIT_COMMIT_AUTHOR` variable at repository level. An example of the value below. To use the variable in a GitHub Action workflow follow [these instructions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values).
 
 ```txt
 Juan Caviedes <juan.caviedes@neoris.com>
 ```
-
-> [!TIP]
-> To use the variable in a GitHub Action workflow follow [these instructions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values).
 
 ## Best Practices
 
