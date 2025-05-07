@@ -11,14 +11,21 @@ Before diving into GitHub Actions, ensure you have the prerequisites described i
 
 - [Prerequisites](#prerequisites)
   - [Table of Contents](#table-of-contents)
+  - [Fork the Repository](#fork-the-repository)
   - [Enable GitHub Actions](#enable-github-actions)
   - [Structure of a Workflow](#structure-of-a-workflow)
     - [About Triggers](#about-triggers)
     - [About Steps](#about-steps)
 
+## Fork the Repository
+
+Please fork the repository to your GitHub account repositories.
+
+> Copy the `main` branch only.
+
 ## Enable GitHub Actions
 
-Actions must first be allowed to run on the repository.
+Actions must first be allowed to run on your forked repository.
 
 ![Screenshot showing how to enable GitHub Actions](../images/example-enable-gha.png)
 

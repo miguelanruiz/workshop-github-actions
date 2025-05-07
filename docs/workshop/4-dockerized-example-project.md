@@ -1,9 +1,14 @@
 # Dockerize the Python Project
 
+This section provides a step-by-step guide to containerizing a Python project using Docker. It covers both manual procedures and automation through GitHub Actions. You'll learn how to build a multi-stage Docker image, configure environment variables, and run the application locally. Additionally, the guide includes instructions for creating a GitHub Actions workflow to automate the containerization process, leveraging popular Docker-related actions. By the end of this section, you'll have a fully functional Docker container ready for deployment.
+
 | **Version Control** | -                          |
 | ------------------- | -------------------------- |
 | `caprivm`           | <juan.caviedes@neoris.com> |
 | Updated             | _May 6, 2025_              |
+
+> [!CAUTION]
+> :exclamation: While following the guide, **please do not create any commits**. There's a special section for this.
 
 ## Table of Contents
 
