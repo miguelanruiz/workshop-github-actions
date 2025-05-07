@@ -7,4 +7,4 @@ This module provides the code version and is
 automatically updated by the python-semantic-release package.
 """
 
-__version__ = "0.3.0-rc.1"
+__version__ = "0.3.0"
