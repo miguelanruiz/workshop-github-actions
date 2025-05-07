@@ -51,13 +51,13 @@ Currently, millions of organizations are registered with GitHub Enterprise.
 
 ## References
 
-| Number | Name                      | Link                                                                                                                                                               |
-| ------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1      | GitHub Actions            | [Understanding GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions)                                               |
-| 2      | Billing in GitHub Actions | [About Billing in GHA](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions) |
-| 3      | _self-hosted_ Runners     | [About _self-hosted_ Runers](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners)                   |
-| 4      | Supported Architecture    | [Architectures in _self-hosted_ Runners](https://github.com/pricing/calculator#actions)                                                                            |
-| 5      | Calculator on AWS         | [AWS Calculator for GHA](https://runs-on.com/calculator/)                                                                                                          |
-| 6      | Calculator by GitHub      | [GitHub Calculator for GHA](https://github.com/pricing/calculator#actions)                                                                                         |
-| 7      | CI/CD GitHub Blog         | [GitHub Blog for GHA](https://github.blog/enterprise-software/ci-cd/)                                                                                              |
-| 8      | Customer Stories          | [GitHub Customer Stories](https://github.com/customer-stories/all)                                                                                                 |
+| **Number** | **Name**                  | **Link**                                                                                                                                                           |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1          | GitHub Actions            | [Understanding GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions)                                               |
+| 2          | Billing in GitHub Actions | [About Billing in GHA](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions) |
+| 3          | _self-hosted_ Runners     | [About _self-hosted_ Runers](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners)                   |
+| 4          | Supported Architecture    | [Architectures in _self-hosted_ Runners](https://github.com/pricing/calculator#actions)                                                                            |
+| 5          | Calculator on AWS         | [AWS Calculator for GHA](https://runs-on.com/calculator/)                                                                                                          |
+| 6          | Calculator by GitHub      | [GitHub Calculator for GHA](https://github.com/pricing/calculator#actions)                                                                                         |
+| 7          | CI/CD GitHub Blog         | [GitHub Blog for GHA](https://github.blog/enterprise-software/ci-cd/)                                                                                              |
+| 8          | Customer Stories          | [GitHub Customer Stories](https://github.com/customer-stories/all)                                                                                                 |

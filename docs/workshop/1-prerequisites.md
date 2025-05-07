@@ -16,6 +16,7 @@ Before diving into GitHub Actions, ensure you have the prerequisites described i
   - [Structure of a Workflow](#structure-of-a-workflow)
     - [About Triggers](#about-triggers)
     - [About Steps](#about-steps)
+  - [References](#references)
 
 ## Fork the Repository
 
@@ -52,3 +53,11 @@ When triggering a workflow by an event, there are some special considerations:
 You can build Docker container, JavaScript, and composite actions. Each action requires a metadata file that defines its inputs, outputs, and main entry point.
 
 > Learn more about custom actions in the [GitHub Documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions).
+
+## References
+
+| **Number** | **Name**               | **Link**                                                                                                                                                                            |
+| ---------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1          | Workflow Syntax        | [Workflow Syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)                                                       |
+| 2          | GitHub-hosted Runners  | [Available GitHub-hosted Runners](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#standard-github-hosted-runners-for--private-repositories) |
+| 3          | Official Documentation | [GitHub Documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions)                                                                |

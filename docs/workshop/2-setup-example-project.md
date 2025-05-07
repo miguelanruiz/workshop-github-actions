@@ -22,10 +22,18 @@ This section provides a step-by-step guide to setting up a Python project using 
     - [Actions Catalog](#actions-catalog-1)
   - [Create a Branch and Commit the Changes](#create-a-branch-and-commit-the-changes)
   - [Help (_if needed_)](#help-if-needed)
+  - [References](#references)
 
 ## Manual Procedure
 
 In this section, taking advantage of the GitHub Codespace, the Python application is executed manually, its correct operation is verified, and a Python package is built for distribution.
+
+Change your package name in the `pyproject.toml` with a `$CUSTOM_NAME` of your preference. For example `CUSTOM_NAME=caprivm`.
+
+```diff
+-name = "fastapi-poetry-deploy-example"
++name = "fastapi-poetry-deploy-$CUSTOM_NAME"
+```
 
 Verify the Python version
 
@@ -318,3 +326,14 @@ This is how each step should look like in order to perform the exercises suggest
 ```
 
 </details>
+
+## References
+
+| **Number** | **Name**                       | **Link**                                                                                                                                                         |
+| ---------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1          | Poetry Dependency Manager      | [Poetry](https://python-poetry.org/)                                                                                                                             |
+| 2          | Ruff Linter                    | [`ruff`](https://docs.astral.sh/ruff/)                                                                                                                           |
+| 3          | PyTest Framework               | [`pytest`](https://docs.pytest.org/en/stable/)                                                                                                                   |
+| 4          | Test PyPi                      | [`test.pypi`](https://test.pypi.org/)                                                                                                                            |
+| 5          | PyPi                           | [`pypi`](https://pypi.org/)                                                                                                                                      |
+| 6          | The `github-actions[bot]` User | [`GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) |
