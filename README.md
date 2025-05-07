@@ -41,13 +41,13 @@
 
 Each of the Workshop sections is described in the following table.
 
-| **Section**                                                                  |
-| ---------------------------------------------------------------------------- |
-| [Introduction](./docs/workshop/0-introduction.md)                            |
-| [Prerequisites to Develop the Workshop](./docs/workshop/1-prerequisites.md)  |
-| [Deploy a Python Package](./docs/workshop/2-setup-example-project.md)        |
-| [Set the Secrets and Variables](./docs/workshop/3-secrets-and-variables.md)  |
-| [Deploy a Docker Container](./docs/workshop/4-dockerized-example-project.md) |
+| **`#`** | **Section**                                                                  |
+| ------- | ---------------------------------------------------------------------------- |
+|    1    | [Introduction](./docs/workshop/0-introduction.md)                            |
+|    2    | [Prerequisites to Develop the Workshop](./docs/workshop/1-prerequisites.md)  |
+|    3    | [Deploy a Python Package](./docs/workshop/2-setup-example-project.md)        |
+|    4    | [Set the Secrets and Variables](./docs/workshop/3-secrets-and-variables.md)  |
+|    5    | [Deploy a Docker Container](./docs/workshop/4-dockerized-example-project.md) |
 
 ## FAQ
 
