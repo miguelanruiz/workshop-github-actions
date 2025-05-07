@@ -27,6 +27,13 @@ This section provides a step-by-step guide to setting up a Python project using 
 
 In this section, taking advantage of the GitHub Codespace, the Python application is executed manually, its correct operation is verified, and a Python package is built for distribution.
 
+Change your package name in the `pyproject.toml` with a `$CUSTOM_NAME` of your preference. For example `CUSTOM_NAME=caprivm`.
+
+```diff
+-name = "fastapi-poetry-deploy-example"
++name = "fastapi-poetry-deploy-$CUSTOM_NAME"
+```
+
 Verify the Python version
 
 ```bash
