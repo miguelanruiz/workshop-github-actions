@@ -14,6 +14,7 @@ This document provides guidance on managing secrets and variables in a GitHub re
   - [Create a Secret](#create-a-secret)
   - [Create a Variable](#create-a-variable)
   - [Best Practices](#best-practices)
+  - [References](#references)
 
 ## Create a Secret
 
@@ -45,7 +46,7 @@ Juan Caviedes <juan.caviedes@neoris.com>
 
 ## References
 
-| Number | Name                  | Link                    |
-| ------ | --------------------- |-|
-| 1 | Secrets in GitHub Actions  | [Secrets Management and Operation](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#using-secrets-in-a-workflow) |
-| 2 | Variables in GitHub Actions | [Variables Management and Operation](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values) |
+| **Number** | **Name**                    | **Link**                                                                                                                                                                                                                  |
+| ---------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1          | Secrets in GitHub Actions   | [Secrets Management and Operation](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#using-secrets-in-a-workflow)                                            |
+| 2          | Variables in GitHub Actions | [Variables Management and Operation](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values) |

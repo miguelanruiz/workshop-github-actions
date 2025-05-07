@@ -20,6 +20,7 @@ This section provides a step-by-step guide to containerizing a Python project us
     - [Actions Catalog](#actions-catalog)
   - [Create a Branch and Commit the Changes](#create-a-branch-and-commit-the-changes)
   - [Help (_if needed_)](#help-if-needed)
+  - [References](#references)
 
 ## Manual Procedure
 
@@ -225,8 +226,8 @@ This is how each step should look like in order to perform the exercises suggest
 
 ## References
 
-| Number | Name                  | Link                    |
-| ------ | --------------------- |-|
-| 1 | Chainguard _base-images_ | [`chainguard`](https://images.chainguard.dev/directory/image/python/versions) |
-| 2 | `docker.io` Registry | [Docker Hub](https://hub.docker.com/) |
-| 3 | The `github-actions[bot]` User | [`GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) |
+| **Number** | **Name**                       | **Link**                                                                                                                                                         |
+| ---------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1          | Chainguard _base-images_       | [`chainguard`](https://images.chainguard.dev/directory/image/python/versions)                                                                                    |
+| 2          | `docker.io` Registry           | [Docker Hub](https://hub.docker.com/)                                                                                                                            |
+| 3          | The `github-actions[bot]` User | [`GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) |
