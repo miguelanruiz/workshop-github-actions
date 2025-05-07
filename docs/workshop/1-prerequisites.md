@@ -11,14 +11,21 @@ Before diving into GitHub Actions, ensure you have the prerequisites described i
 
 - [Prerequisites](#prerequisites)
   - [Table of Contents](#table-of-contents)
+  - [Fork the Repository](#fork-the-repository)
   - [Enable GitHub Actions](#enable-github-actions)
   - [Structure of a Workflow](#structure-of-a-workflow)
     - [About Triggers](#about-triggers)
     - [About Steps](#about-steps)
 
+## Fork the Repository
+
+Please fork the repository to your GitHub account repositories.
+
+> Copy the `main` branch only.
+
 ## Enable GitHub Actions
 
-Actions must first be allowed to run on the repository.
+Actions must first be allowed to run on your forked repository.
 
 ![Screenshot showing how to enable GitHub Actions](../images/example-enable-gha.png)
 
@@ -30,9 +37,8 @@ All workflows must have a basic structure for their execution. The necessary ini
 - `on` is the type of workflow trigger.
 - Jobs must include `runs-on` and `steps`, or alternatively, reference a reusable workflow.
 
-> Let's see the details [here](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions).
->
-> - All the available GitHub hosted runners [here](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#standard-github-hosted-runners-for--private-repositories).
+> - [Workflow Syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+> - [Available GitHub-hosted Runners](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#standard-github-hosted-runners-for--private-repositories)
 
 ### About Triggers
 
@@ -45,4 +51,4 @@ When triggering a workflow by an event, there are some special considerations:
 
 You can build Docker container, JavaScript, and composite actions. Each action requires a metadata file that defines its inputs, outputs, and main entry point.
 
-> Learn more about custom actions in the [GitHub documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions).
+> Learn more about custom actions in the [GitHub Documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions).

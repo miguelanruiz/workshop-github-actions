@@ -2,6 +2,13 @@ name: Build the Python Container
 on:
   workflow_call:
     inputs:
+      publish:
+        description: |
+          Push the container image to Docker Hub.
+          This should be set to true if you want to push the image.
+        required: true
+        type: boolean
+        default: false
       python-version:
         description: |
           Python version to use for the container building process. Because we are using chainguard, this version should be the latest minor version of Python.
@@ -14,7 +21,6 @@ on:
           Docker Hub token for pushing the container image.
           This token should have write access to the repository.
         required: true
-        type: string
 
 jobs:
   build-container:

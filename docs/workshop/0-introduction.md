@@ -24,26 +24,20 @@ _GitHub Actions is a continuous integration and continuous delivery (CI/CD) plat
 > [!IMPORTANT]
 > GitHub Actions can help you automate nearly every aspect of your application development processes.
 
-_Reference: [1](#references)_
-
 ## Pricing
 
 GitHub Actions billing depends on your plan, the use of GitHub-hosted runners, the type of machine, and other factors. Key details are below:
 
-> Let's see the details [here](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions).
->
-> - Calculator by GitHub [here](https://github.com/pricing/calculator#actions)
+> - [Billing for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions)
+> - [Calculator by GitHub](https://github.com/pricing/calculator#actions)
 
 ### Self-hosted Runners
 
 A _self-hosted_ runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.
 
-> Let's see the details [here](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners).
->
-> - Supported Architectures [here](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/supported-architectures-and-operating-systems-for-self-hosted-runners).
-> - Calculator on AWS [here](https://runs-on.com/calculator/).
-
-_References: [2-6](#references)_
+> - [About _self-hosted_ Runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners)
+> - [Supported Architectures](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/supported-architectures-and-operating-systems-for-self-hosted-runners)
+> - [Calculator on AWS](https://runs-on.com/calculator/)
 
 ## Who uses GitHub Actions?
 
@@ -51,12 +45,9 @@ Currently, millions of organizations are registered with GitHub Enterprise.
 
 ![Alt text: A visual representation of GitHub Actions customers](../images/introduction-who-use-gha.png)
 
-> Let's see some details [here](https://github.com/customer-stories).
->
-> - All the customer stories [here](https://github.com/customer-stories/all).
-> - GitHub Blog for CI/CD [here](https://github.blog/enterprise-software/ci-cd/).
-
-_References: [6-8](#references)_
+> - [Customer Stories](https://github.com/customer-stories)
+> - [All the Customer Stories](https://github.com/customer-stories/all)
+> - [GitHub Blog for CI/CD](https://github.blog/enterprise-software/ci-cd/)
 
 ## References
 

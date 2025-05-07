@@ -5,7 +5,10 @@ This section provides a step-by-step guide to setting up a Python project using 
 | **Version Control** | -                          |
 | ------------------- | -------------------------- |
 | `caprivm`           | <juan.caviedes@neoris.com> |
-| Updated             | _May 5, 2025_              |
+| Updated             | _May 6, 2025_              |
+
+> [!CAUTION]
+> :exclamation: While following the guide, **please do not create any commits**. There's a special section for this.
 
 ## Table of Contents
 
@@ -13,10 +16,12 @@ This section provides a step-by-step guide to setting up a Python project using 
   - [Table of Contents](#table-of-contents)
   - [Manual Procedure](#manual-procedure)
     - [Execute the Application](#execute-the-application)
-  - [First Exercise in GitHub Actions](#first-exercise-in-github-actions)
-    - [First: Actions Catalog](#first-actions-catalog)
-  - [Second Exercise](#second-exercise)
-    - [Second: Actions Catalog](#second-actions-catalog)
+  - [Build the Package in GitHub Actions](#build-the-package-in-github-actions)
+    - [Actions Catalog](#actions-catalog)
+  - [Publish the Package with GitHub Actions](#publish-the-package-with-github-actions)
+    - [Actions Catalog](#actions-catalog-1)
+  - [Create a Branch and Commit the Changes](#create-a-branch-and-commit-the-changes)
+  - [Help (_if needed_)](#help-if-needed)
 
 ## Manual Procedure
 
@@ -77,13 +82,13 @@ Run build
 poetry build
 ```
 
-> [!NOTE]
+> [!TIP]
 > If you want to publish the package to a Python Package Index like [`test.pypi`](https://test.pypi.org/) or [`pypi`](https://pypi.org/), you can use the following commands.
 >
 > ```bash
 > poetry config repositories.testpypi https://test.pypi.org/legacy/
-> poetry publish --repository testpypi --username __token__ --password ${TEST_PYPI_API_TOKEN} # --build --dry-run
->```
+> poetry publish --repository testpypi --username __token__ --password ${TEST_PYPI_API_TOKEN} # OPTIONAL | --build --dry-run
+> ```
 
 ### Execute the Application
 
@@ -97,7 +102,7 @@ When you access the URL, you should see something similar to the following image
 
 ![Screenshot of the FastAPI application homepage](../images/example-application-first-view.png)
 
-## First Exercise in GitHub Actions
+## Build the Package in GitHub Actions
 
 The exercise consists of following the steps defined in the diagram until producing a Python package.
 
@@ -118,7 +123,7 @@ flowchart TD
     n5@{ shape: f-circ}
 ```
 
-### First: Actions Catalog
+### Actions Catalog
 
 In this section you will find a catalog of actions to use in implementing the suggested workflow.
 
@@ -131,14 +136,27 @@ In this section you will find a catalog of actions to use in implementing the su
 | Run Tests            | _Custom_                                                          |
 | Run Build            | _Custom_                                                          |
 
-## Second Exercise
+## Publish the Package with GitHub Actions
 
 Add two steps to the previous job:
 
 - Publish the package as an artifact to GitHub Run
-- Publish to [PyPi](https://pypi.org/)
+- Publish to [Test PyPi](https://test.pypi.org/)
 
-### Second: Actions Catalog
+```mermaid
+flowchart TD
+    D["Publish Package in GitHub"] --> n2["Publish to PyPi?"]
+    n2 -- No --> n3["Untitled Node"]
+    n2 -- Yes --> n4["Publish Package"]
+    n4 --> n3
+    n1["Small Circle"] --> D
+
+    n2@{ shape: diam}
+    n3@{ shape: f-circ}
+    n1@{ shape: sm-circ}
+```
+
+### Actions Catalog
 
 | **Action**             | **Source**                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------- |
@@ -148,17 +166,155 @@ Add two steps to the previous job:
 For the _Publish to PyPi Action_ the suggested structure to use is below.
 
 ```yaml
-- name: Upload Python Project to the Registry
+- name: Publish Artifact
   uses: pypa/gh-action-pypi-publish@v1.12.4
   with:
-    user:
-    password:
-    repository-url:
-    packages-dir:
+    password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+    repository-url: "https://test.pypi.org/legacy/"
+    packages-dir: "dist/*"
     attestations: true
 ```
 
 > [!IMPORTANT]
-> To publish to PyPi we need to set up a `PYPI_API_TOKEN` that will be the `password` input.
+> To publish to Test PyPi we need to set up a `TEST_PYPI_API_TOKEN` that will be the `password` input.
 >
 > - If we want _trusted publishing_, we need `id-token: write` set in the job. Details of the permissions [here](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).
+
+## Create a Branch and Commit the Changes
+
+At this point create a new branch, add the changes, and make the commits.
+
+> [!IMPORTANT]
+> Follow this notation for the branch and for the commit messages.
+>
+> - **Branch Name**: Start with `dev-`
+> - **Commit Message**: Add the keyword `feat:` at the beginning of the message
+
+```bash
+git fetch --all
+git checkout main
+git pull
+git checkout -b dev-workshop-first-exercise
+git add .
+git commit -m "feat: Add the Changes"
+git push --set-upstream origin dev-workshop-first-exercise
+```
+
+## Help (_if needed_)
+
+This is how each step should look like in order to perform the exercises suggested in the document.
+
+<details>
+
+<summary>Checkout</summary>
+
+```yaml
+- name: Checkout Code
+  uses: actions/checkout@v4
+  with:
+    fetch-depth: 0
+```
+
+</details>
+
+<details>
+
+<summary>Setup Python</summary>
+
+```yaml
+- name: Setup Python
+  uses: actions/setup-python@v5
+  with:
+    python-version: "3.13"
+```
+
+</details>
+
+<details>
+
+<summary>Install Dependencies</summary>
+
+```yaml
+- name: Install Dependencies
+  working-directory: "./python"
+  run: |
+    pip install --upgrade pip
+    pip install --upgrade poetry
+    poetry install
+```
+
+</details>
+
+<details>
+
+<summary>Run Lint</summary>
+
+```yaml
+- name: Run Lint
+  working-directory: "./python"
+  run: |
+    ruff check .
+    ruff check --fix .
+```
+
+</details>
+
+</details>
+
+<details>
+
+<summary>Run Tests</summary>
+
+```yaml
+- name: Run Tests
+  working-directory: "./python"
+  if: ${{ github.event.inputs.run-tests }}
+  run: |
+    poetry run test
+```
+
+</details>
+
+<details>
+
+<summary>Run Build</summary>
+
+```yaml
+- name: Run Tests
+  working-directory: "./python"
+  run: |
+    poetry build
+```
+
+</details>
+
+<details>
+
+<summary>Upload Artifact to GitHub</summary>
+
+```yaml
+- name: Upload Artifact to GitHub
+  uses: actions/upload-artifact@v4
+  with:
+    name: fastapi-poetry-deploy-example-package
+    path: "python/dist/*"
+```
+
+</details>
+
+<details>
+
+<summary>Publish Artifact to Test PyPi</summary>
+
+```yaml
+- name: Publish Artifact
+  if: ${{ github.event.inputs.publish }}
+  uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+  with:
+    password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+    repository-url: "https://test.pypi.org/legacy/"
+    packages-dir: "python/dist/*"
+    attestations: true
+```
+
+</details>

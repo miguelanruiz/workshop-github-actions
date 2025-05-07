@@ -28,7 +28,7 @@ documentation = "https://github.com/caprivm/workshop-github-actions/tree/main/py
 "Bug Tracker" = "https://github.com/caprivm/workshop-github-actions/issues"
 
 [tool.poetry]
-version = "0.3.0-rc.1"
+version = "0.3.0"
 packages = [ { include = "tests" } ]
 
 [tool.poetry.dependencies]
@@ -48,6 +48,11 @@ test = "scripts:__main__"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+ignore = [
+    "E402",
+]
 
 [tool.semantic_release]
 assets = []
