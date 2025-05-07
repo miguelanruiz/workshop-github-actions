@@ -2,19 +2,19 @@ name: Build the Python Container
 on:
   workflow_call:
     inputs:
-      python-version:
-        description: |
-          Python version to use for the container building process. Because we are using chainguard, this version should be the latest minor version of Python.
-          At the time of writing the workflow, the version is 3.13. Link: https://images.chainguard.dev/directory/image/python/versions
-        required: true
-        type: string
-      push:
+      publish:
         description: |
           Push the container image to Docker Hub.
           This should be set to true if you want to push the image.
         required: true
         type: boolean
         default: false
+      python-version:
+        description: |
+          Python version to use for the container building process. Because we are using chainguard, this version should be the latest minor version of Python.
+          At the time of writing the workflow, the version is 3.13. Link: https://images.chainguard.dev/directory/image/python/versions
+        required: true
+        type: string
     secrets:
       DOCKER_HUB_TOKEN:
         description: |

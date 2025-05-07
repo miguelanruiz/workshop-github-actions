@@ -2,6 +2,16 @@ name: Build the Python Application
 on:
   workflow_dispatch:
     inputs:
+      containerized:
+        description: "Build a container version of the application"
+        required: false
+        type: boolean
+        default: false
+      publish:
+        description: "Publish the package to PyPI"
+        required: false
+        type: boolean
+        default: false
       python-version:
         description: "Python version to use"
         required: false
@@ -13,11 +23,11 @@ on:
           - "3.10"
           - "3.9"
         default: "3.13"
-      containerized:
-        description: "Build a container version of the application"
+      run-tests:
+        description: "Run tests before building the package"
         required: false
         type: boolean
-        default: false
+        default: true
 
 env:
   PYTHON_VERSION: ${{ github.event.inputs.python-version || '3.13' }}
