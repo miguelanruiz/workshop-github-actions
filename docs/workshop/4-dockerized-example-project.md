@@ -5,10 +5,10 @@
 | `caprivm`           | <juan.caviedes@neoris.com> |
 | Updated             | _May 6, 2025_              |
 
-## Table of Content
+## Table of Contents
 
 - [Dockerize the Python Project](#dockerize-the-python-project)
-  - [Table of Content](#table-of-content)
+  - [Table of Contents](#table-of-contents)
   - [Manual Procedure](#manual-procedure)
     - [Execute the Application](#execute-the-application)
   - [Create the Docker Container in GitHub Actions](#create-the-docker-container-in-github-actions)
@@ -37,7 +37,7 @@ export DOCKER_HUB_TOKEN=
 Login to the registry
 
 ```bash
-docker login hub.docker.com -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_TOKEN
+docker login docker.io -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_TOKEN
 ```
 
 Build the container
@@ -49,7 +49,7 @@ docker build \
 -f python/. .
 ```
 
-> [!NOTE]
+> [!TIP]
 > If you want to publish the container to [Docker Hub](https://hub.docker.com/) you can use the following commands.
 >
 > ```bash
@@ -210,8 +210,8 @@ This is how each step should look like in order to perform the exercises suggest
 - name: Build and Push
   uses: docker/build-push-action@v6
   with:
-    context: "python/.
-    push: ${{ inputs.push }}
+    context: "python/."
+    push: ${{ inputs.publish }}
     tags: ${{ steps.meta.outputs.tags }}
     labels: ${{ steps.meta.outputs.labels }}
 ```

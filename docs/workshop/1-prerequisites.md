@@ -30,10 +30,8 @@ All workflows must have a basic structure for their execution. The necessary ini
 - `on` is the type of workflow trigger.
 - Jobs must include `runs-on` and `steps`, or alternatively, reference a reusable workflow.
 
-> [!TIP]
->
-> - [Workflow Syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions).
-> - [Available GitHub-hosted Runners](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#standard-github-hosted-runners-for--private-repositories).
+> - [Workflow Syntax for GitHub Actions](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+> - [Available GitHub-hosted Runners](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#standard-github-hosted-runners-for--private-repositories)
 
 ### About Triggers
 
@@ -46,4 +44,4 @@ When triggering a workflow by an event, there are some special considerations:
 
 You can build Docker container, JavaScript, and composite actions. Each action requires a metadata file that defines its inputs, outputs, and main entry point.
 
-> Learn more about custom actions in the [GitHub documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions).
+> Learn more about custom actions in the [GitHub Documentation](https://docs.github.com/en/actions/sharing-automations/creating-actions/about-custom-actions).

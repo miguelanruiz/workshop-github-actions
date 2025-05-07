@@ -82,7 +82,7 @@ Run build
 poetry build
 ```
 
-> [!NOTE]
+> [!TIP]
 > If you want to publish the package to a Python Package Index like [`test.pypi`](https://test.pypi.org/) or [`pypi`](https://pypi.org/), you can use the following commands.
 >
 > ```bash
@@ -225,7 +225,7 @@ This is how each step should look like in order to perform the exercises suggest
 - name: Setup Python
   uses: actions/setup-python@v5
   with:
-    python-version: '3.13' 
+    python-version: "3.13"
 ```
 
 </details>
@@ -268,6 +268,7 @@ This is how each step should look like in order to perform the exercises suggest
 ```yaml
 - name: Run Tests
   working-directory: "./python"
+  if: ${{ github.event.inputs.run-tests }}
   run: |
     poetry run test
 ```
@@ -296,7 +297,7 @@ This is how each step should look like in order to perform the exercises suggest
   uses: actions/upload-artifact@v4
   with:
     name: fastapi-poetry-deploy-example-package
-    path: "dist/*"
+    path: "python/dist/*"
 ```
 
 </details>
@@ -307,11 +308,12 @@ This is how each step should look like in order to perform the exercises suggest
 
 ```yaml
 - name: Publish Artifact
+  if: ${{ github.event.inputs.publish }}
   uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
   with:
     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
     repository-url: "https://test.pypi.org/legacy/"
-    packages-dir: "dist/*"
+    packages-dir: "python/dist/*"
     attestations: true
 ```
 
