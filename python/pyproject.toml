@@ -49,6 +49,11 @@ test = "scripts:__main__"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.ruff.lint]
+ignore = [
+    "E402",
+]
+
 [tool.semantic_release]
 assets = []
 build_command_env = []
