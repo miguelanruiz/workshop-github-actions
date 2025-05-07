@@ -325,3 +325,14 @@ This is how each step should look like in order to perform the exercises suggest
 ```
 
 </details>
+
+## References
+
+| Number | Name                  | Link                    |
+| ------ | --------------------- |-|
+| 1 | Poetry Dependency Manager  | [Poetry](https://python-poetry.org/) |
+| 2 | Ruff Linter  | [`ruff`](https://docs.astral.sh/ruff/) |
+| 3 | PyTest Framework | [`pytest`](https://docs.pytest.org/en/stable/) |
+| 4 | Test PyPi  | [`test.pypi`](https://test.pypi.org/) |
+| 5 | PyPi | [`pypi`](https://pypi.org/) |
+| 6 | The `github-actions[bot]` User | [`GITHUB_TOKEN`](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) |
