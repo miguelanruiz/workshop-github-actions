@@ -13,7 +13,8 @@ RUN pip install poetry tomlkit
 
 ## Install the Application Dependencies
 COPY . ./
-RUN poetry install
+RUN cd python \
+    poetry install
 
 ## Copy the Application Source Code
 FROM cgr.dev/chainguard/python:latest
@@ -27,4 +28,4 @@ ENV PATH="/fastapi-app/.venv/bin:${PATH}" \
 
 ## Run the FastAPI application
 EXPOSE 8000
-CMD ["/fastapi-app/.venv/bin/fastapi", "run", "src/main.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/fastapi-app/.venv/bin/fastapi", "run", "python/src/main.py", "--port", "8000", "--host", "0.0.0.0"]
