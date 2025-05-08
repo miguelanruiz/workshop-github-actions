@@ -143,7 +143,7 @@ In this section you will find a catalog of actions to use in implementing the su
 | Setup Python         | [`actions/setup-python`](https://github.com/actions/setup-python) |
 | Install Dependencies | _Custom_                                                          |
 | Run Lint             | _Custom_                                                          |
-| Fix Linter Findings             | _Custom_                                                          |
+| Fix Linter Findings  | _Custom_                                                          |
 | Run Tests            | _Custom_                                                          |
 | Run Build            | _Custom_                                                          |
 
