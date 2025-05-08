@@ -92,12 +92,14 @@ flowchart TD
     n10 -- Yes --> n11["Build"]
     n10 -- No --> n13["Build"]
     n11 --> n12["Push"]
-    n13 --> n14["Filled Circle"]
-    n12 --> n14
+    n13 --> n15["Save Image to the GitHub Run"]
+    n15 --> n14["Filled Circle"]
+    n12 --> n15
 
     n6@{ shape: sm-circ}
     n10@{ shape: diam}
     n14@{ shape: f-circ}
+
 ```
 
 ### Actions Catalog
@@ -112,6 +114,8 @@ In this section you will find a catalog of actions to use in implementing the su
 | Setup QEMU      | [`setup-qemu-action`](https://github.com/docker/setup-qemu-action)     |
 | Setup `buildx`  | [`setup-buildx-action`](https://github.com/docker/setup-buildx-action) |
 | Build and Push  | [`build-push-action`](https://github.com/docker/build-push-action)     |
+| Build and Push  | [`build-push-action`](https://github.com/docker/build-push-action)     |
+| Save Image to the GitHub Run        | [`actions/upload-artifact`](https://github.com/actions/upload-artifact)         |
 
 > [!IMPORTANT]
 > To publish to Docker Hub we need to set up a `DOCKER_HUB_TOKEN` that will be the `password` to push the container.
@@ -180,7 +184,7 @@ This is how each step should look like in order to perform the exercises suggest
   with:
     images: docker.io/fastapi-poetry-deploy-example
     tags: |
-      type=raw,value=0.3.0
+      type=raw,value=0.4.0
       type=raw,value=latest
 ```
 
@@ -216,10 +220,28 @@ This is how each step should look like in order to perform the exercises suggest
 - name: Build and Push
   uses: docker/build-push-action@v6
   with:
-    context: "python/."
+    context: "."
+    file: "python/Dockerfile"
     push: ${{ inputs.publish }}
     tags: ${{ steps.meta.outputs.tags }}
     labels: ${{ steps.meta.outputs.labels }}
+    outputs: type=docker,dest=${{ runner.temp }}/fastapi-poetry-deploy-example.tar
+    build-args:
+      PYTHON_VERSION=${{ inputs.python-version }}
+```
+
+</details>
+
+<details>
+
+<summary>Save Image to the GitHub Run</summary>
+
+```yaml
+- name: Save Image to the GitHub Run
+  uses: actions/upload-artifact@v4
+  with:
+    name: fastapi-poetry-deploy-example
+    path: ${{ runner.temp }}/fastapi-poetry-deploy-example.tar
 ```
 
 </details>
