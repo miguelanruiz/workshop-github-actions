@@ -34,7 +34,6 @@ jobs:
     name: Build the Python Package
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    if: ${{ false }}
     permissions:
       contents: read
     steps:
