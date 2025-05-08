@@ -122,13 +122,15 @@ flowchart TD
     E --> F["Run Lint"]
     n2["Skip tests?"] -- yes --> n3["Run Build"]
     n2 -- no --> n4["Run Tests"]
-    F --> n2
     n4 --> n3
     n3 --> n5["Filled Circle"]
+    F --> n6["Fix Linter Findings"]
+    n6 --> n2
 
     n1@{ shape: sm-circ}
     n2@{ shape: diam}
     n5@{ shape: f-circ}
+    n6@{ shape: rect}
 ```
 
 ### Actions Catalog
@@ -141,6 +143,7 @@ In this section you will find a catalog of actions to use in implementing the su
 | Setup Python         | [`actions/setup-python`](https://github.com/actions/setup-python) |
 | Install Dependencies | _Custom_                                                          |
 | Run Lint             | _Custom_                                                          |
+| Fix Linter Findings  | _Custom_                                                          |
 | Run Tests            | _Custom_                                                          |
 | Run Build            | _Custom_                                                          |
 
@@ -175,11 +178,12 @@ For the _Publish to PyPi Action_ the suggested structure to use is below.
 
 ```yaml
 - name: Publish Artifact
-  uses: pypa/gh-action-pypi-publish@v1.12.4
+  if: ${{ inputs.publish }}
+  uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
   with:
     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
     repository-url: "https://test.pypi.org/legacy/"
-    packages-dir: "dist/*"
+    packages-dir: "python/dist/"
     attestations: true
 ```
 
@@ -233,7 +237,7 @@ This is how each step should look like in order to perform the exercises suggest
 - name: Setup Python
   uses: actions/setup-python@v5
   with:
-    python-version: "3.13"
+    python-version: ${{ inputs.python-version }}
 ```
 
 </details>
@@ -260,9 +264,22 @@ This is how each step should look like in order to perform the exercises suggest
 ```yaml
 - name: Run Lint
   working-directory: "./python"
+  continue-on-error: true
   run: |
-    ruff check .
-    ruff check --fix .
+    poetry run ruff check .
+```
+
+</details>
+
+<details>
+
+<summary>Fix Linter Findings</summary>
+
+```yaml
+- name: Fix Linter Findings
+  working-directory: "./python"
+  run: |
+    poetry run ruff check --fix .
 ```
 
 </details>
@@ -276,7 +293,7 @@ This is how each step should look like in order to perform the exercises suggest
 ```yaml
 - name: Run Tests
   working-directory: "./python"
-  if: ${{ github.event.inputs.run-tests }}
+  if: ${{ inputs.run-tests }}
   run: |
     poetry run test
 ```
@@ -288,7 +305,7 @@ This is how each step should look like in order to perform the exercises suggest
 <summary>Run Build</summary>
 
 ```yaml
-- name: Run Tests
+- name: Run Build
   working-directory: "./python"
   run: |
     poetry build
@@ -316,12 +333,12 @@ This is how each step should look like in order to perform the exercises suggest
 
 ```yaml
 - name: Publish Artifact
-  if: ${{ github.event.inputs.publish }}
+  if: ${{ inputs.publish }}
   uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
   with:
     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
     repository-url: "https://test.pypi.org/legacy/"
-    packages-dir: "python/dist/*"
+    packages-dir: "python/dist/"
     attestations: true
 ```
 

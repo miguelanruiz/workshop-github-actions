@@ -29,9 +29,6 @@ on:
         type: boolean
         default: true
 
-env:
-  PYTHON_VERSION: ${{ github.event.inputs.python-version || '3.13' }}
-
 jobs:
   build-package:
     name: Build the Python Package
@@ -44,13 +41,14 @@ jobs:
       - name: Workshop Initial Step
         run: |
           echo "Hello World!"
-  
+
+  ## NOTE: This section is for the second part of the Demo
   # build-container:
   #   name: Build the Python Container
-  #   if: ${{ github.event.inputs.containerized == 'true' }}
+  #   if: ${{ inputs.containerized }}
   #   uses: ./.github/workflows/build-container.yaml
   #   secrets:
   #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
   #   with:
-  #     python-version: ${{ env.PYTHON_VERSION }}
-  #     push: true
+  #     publish: true
+  #     python-version: ${{ inputs.python-version }}
