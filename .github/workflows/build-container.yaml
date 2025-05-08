@@ -73,7 +73,7 @@ jobs:
           build-args:
             PYTHON_VERSION=${{ inputs.python-version }}
 
-      - name: Save Image to Actions
+      - name: Save Image to the GitHub Run
         uses: actions/upload-artifact@v4
         with:
           name: fastapi-poetry-deploy-example
