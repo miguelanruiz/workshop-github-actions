@@ -178,11 +178,12 @@ For the _Publish to PyPi Action_ the suggested structure to use is below.
 
 ```yaml
 - name: Publish Artifact
-  uses: pypa/gh-action-pypi-publish@v1.12.4
+  if: ${{ inputs.publish }}
+  uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
   with:
     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
     repository-url: "https://test.pypi.org/legacy/"
-    packages-dir: "dist/*"
+    packages-dir: "python/dist/"
     attestations: true
 ```
 
@@ -337,7 +338,7 @@ This is how each step should look like in order to perform the exercises suggest
   with:
     password: ${{ secrets.TEST_PYPI_API_TOKEN }}
     repository-url: "https://test.pypi.org/legacy/"
-    packages-dir: "python/dist/*"
+    packages-dir: "python/dist/"
     attestations: true
 ```
 
