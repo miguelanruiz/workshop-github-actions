@@ -12,14 +12,14 @@ ENV PATH="/fastapi-app/.venv/bin:$PATH" \
 RUN pip install poetry tomlkit
 
 ## Install the Application Dependencies
-ADD python ./
+COPY . ./
 RUN poetry install
 
 ## Copy the Application Source Code
 FROM cgr.dev/chainguard/python:latest
 ARG PYTHON_VERSION=3.13
 WORKDIR /fastapi-app
-COPY python ./
+COPY . ./
 COPY --from=dev /fastapi-app/.venv /fastapi-app/.venv
 ENV PATH="/fastapi-app/.venv/bin:${PATH}" \
     PYTHONPATH="/fastapi-app:/fastapi-app/.venv/lib/python${PYTHON_VERSION}/site-packages:${PATH}" \
