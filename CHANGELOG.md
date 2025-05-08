@@ -1,6 +1,84 @@
 # CHANGELOG
 
 
+## v0.4.1 (2025-05-08)
+
+### Bug Fixes
+
+- Add file input to the workflow
+  ([`63b36fb`](https://github.com/caprivm/workshop-github-actions/commit/63b36fbf03600dd95dadc99ec3d527952a2cbcf2))
+
+- Add last steps for container scenario
+  ([`0851e1d`](https://github.com/caprivm/workshop-github-actions/commit/0851e1dc34595f5b5ca9242d3d2a18237472f3fe))
+
+- Add user to the image in docker
+  ([`27f3479`](https://github.com/caprivm/workshop-github-actions/commit/27f3479abe3494a3124df90154a4306bd7c77a87))
+
+- Dockerfile copy command
+  ([`1205b8a`](https://github.com/caprivm/workshop-github-actions/commit/1205b8a724defc7d92c32a45be435a5484423b71))
+
+- Format document 4
+  ([`b1726b8`](https://github.com/caprivm/workshop-github-actions/commit/b1726b884255456b6fde2dda36ac35afe4007fd1))
+
+- Name in the last step of the docker action
+  ([`09b3dbc`](https://github.com/caprivm/workshop-github-actions/commit/09b3dbc7567d655b2b7f694351e95eef4bdd23e2))
+
+- Remove if false in the main workflow
+  ([`15700b0`](https://github.com/caprivm/workshop-github-actions/commit/15700b0a496a1f23b4c01aed85d306360ca9113f))
+
+- Update publish action
+  ([`631a5e1`](https://github.com/caprivm/workshop-github-actions/commit/631a5e1c9236450d8604048f9db61de66ae54dfb))
+
+- Working-directory
+  ([`6e8e097`](https://github.com/caprivm/workshop-github-actions/commit/6e8e0975d73e6ed9beb48a4476eaebf883920d94))
+
+### Documentation
+
+- Add a note about package
+  ([`d9dd023`](https://github.com/caprivm/workshop-github-actions/commit/d9dd023285a6bd3def934d3517377dc1ccaf2731))
+
+- Lint document 2
+  ([`3b718b4`](https://github.com/caprivm/workshop-github-actions/commit/3b718b47d27a4b09c935514d8149a4cc2c23d639))
+
+- Rollback to the main branch
+  ([`7cc1649`](https://github.com/caprivm/workshop-github-actions/commit/7cc1649408b28a15b2c872b5ee63ccd46ddbccd0))
+
+- Update docs based on tests
+  ([`d7d468e`](https://github.com/caprivm/workshop-github-actions/commit/d7d468ee79423503f4675828fe1cf7b1f8028ac1))
+
+- Update README
+  ([`4e606a1`](https://github.com/caprivm/workshop-github-actions/commit/4e606a1c102ee9cf684064502bd7dda6249c481f))
+
+- Update references on docs
+  ([`1e5eea8`](https://github.com/caprivm/workshop-github-actions/commit/1e5eea8cc69d1baf3edc0681882b7d44a699278b))
+
+### Testing
+
+- Change to python/dist in the publish action
+  ([`29fa371`](https://github.com/caprivm/workshop-github-actions/commit/29fa3716a69f61ff1e469a4c12481c5559eca586))
+
+- Context already given, change Dockerfile
+  ([`be9e537`](https://github.com/caprivm/workshop-github-actions/commit/be9e537610603390343ee2c3a50aa221923f2dd9))
+
+- Dockerfile with ADD
+  ([`d32af22`](https://github.com/caprivm/workshop-github-actions/commit/d32af22f8cbb7e4c556386badfbf39f3136f8086))
+
+- Test build again
+  ([`c657676`](https://github.com/caprivm/workshop-github-actions/commit/c657676f6385b3c1fe0d8ee2a3e6d324dff12a7a))
+
+- Test containerized option
+  ([`34d1121`](https://github.com/caprivm/workshop-github-actions/commit/34d1121170f4d69c8e50af57160e6488dc7abe43))
+
+- Test new dir in the publish to pypi
+  ([`a19f0a5`](https://github.com/caprivm/workshop-github-actions/commit/a19f0a51c85c745cfb0ac977cc15449f7f673891))
+
+- Test package
+  ([`b48b0bf`](https://github.com/caprivm/workshop-github-actions/commit/b48b0bf421bdbec00d6f6d01a178a9a7303d0d43))
+
+- Update Dockerfile
+  ([`cd5512a`](https://github.com/caprivm/workshop-github-actions/commit/cd5512a3f4670cf6c31779078571cebcb8cca0ad))
+
+
 ## v0.4.0 (2025-05-07)
 
 ### Bug Fixes
