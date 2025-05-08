@@ -63,12 +63,11 @@ jobs:
         working-directory: "./python"
         continue-on-error: true
         run: |
-          ruff check .
+          poetry run ruff check .
 
       - name: Fix the Linter Findings
-        continue-on-error: true
         run: |
-          ruff check --fix .
+          poetry run ruff check --fix .
 
       - name: Run Tests
         working-directory: "./python"
@@ -76,7 +75,7 @@ jobs:
         run: |
           poetry run test
   
-      - name: Run Tests
+      - name: Run Build
         working-directory: "./python"
         run: |
           poetry build
@@ -106,4 +105,3 @@ jobs:
   #   with:
   #     python-version: ${{ inputs.python-version }}
   #     push: true
-  
