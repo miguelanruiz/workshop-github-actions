@@ -106,16 +106,16 @@ flowchart TD
 
 In this section you will find a catalog of actions to use in implementing the suggested workflow.
 
-| **Action**      | **Source**                                                             |
-| --------------- | ---------------------------------------------------------------------- |
-| Checkout        | [`actions/checkout`](https://github.com/actions/checkout)              |
-| Docker Login    | [`docker/login-action`](https://github.com/docker/login-action)        |
-| Docker Metadata | [`docker/metadata-action`](https://github.com/docker/metadata-action)  |
-| Setup QEMU      | [`setup-qemu-action`](https://github.com/docker/setup-qemu-action)     |
-| Setup `buildx`  | [`setup-buildx-action`](https://github.com/docker/setup-buildx-action) |
-| Build and Push  | [`build-push-action`](https://github.com/docker/build-push-action)     |
-| Build and Push  | [`build-push-action`](https://github.com/docker/build-push-action)     |
-| Save Image to the GitHub Run        | [`actions/upload-artifact`](https://github.com/actions/upload-artifact)         |
+| **Action**                   | **Source**                                                              |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| Checkout                     | [`actions/checkout`](https://github.com/actions/checkout)               |
+| Docker Login                 | [`docker/login-action`](https://github.com/docker/login-action)         |
+| Docker Metadata              | [`docker/metadata-action`](https://github.com/docker/metadata-action)   |
+| Setup QEMU                   | [`setup-qemu-action`](https://github.com/docker/setup-qemu-action)      |
+| Setup `buildx`               | [`setup-buildx-action`](https://github.com/docker/setup-buildx-action)  |
+| Build and Push               | [`build-push-action`](https://github.com/docker/build-push-action)      |
+| Build and Push               | [`build-push-action`](https://github.com/docker/build-push-action)      |
+| Save Image to the GitHub Run | [`actions/upload-artifact`](https://github.com/actions/upload-artifact) |
 
 > [!IMPORTANT]
 > To publish to Docker Hub we need to set up a `DOCKER_HUB_TOKEN` that will be the `password` to push the container.
