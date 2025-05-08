@@ -66,6 +66,7 @@ jobs:
           poetry run ruff check .
 
       - name: Fix the Linter Findings
+        working-directory: "./python"
         run: |
           poetry run ruff check --fix .
 
