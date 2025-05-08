@@ -34,6 +34,7 @@ jobs:
     name: Build the Python Package
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    if: ${{ false }}
     permissions:
       contents: read
     steps:
@@ -97,12 +98,12 @@ jobs:
           attestations: true
 
   ## NOTE: This section is for the second part of the Demo
-  # build-container:
-  #   name: Build the Python Container
-  #   if: ${{ inputs.containerized }}
-  #   uses: ./.github/workflows/build-container.yaml
-  #   secrets:
-  #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
-  #   with:
-  #     python-version: ${{ inputs.python-version }}
-  #     push: true
+  build-container:
+    name: Build the Python Container
+    if: ${{ inputs.containerized }}
+    uses: ./.github/workflows/build-container.yaml
+    secrets:
+      DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+    with:
+      publish: true
+      python-version: ${{ inputs.python-version }}
