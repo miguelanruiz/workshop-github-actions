@@ -29,9 +29,6 @@ on:
         type: boolean
         default: true
 
-env:
-  PYTHON_VERSION: ${{ github.event.inputs.python-version || '3.13' }}
-
 jobs:
   build-package:
     name: Build the Python Package
@@ -44,13 +41,69 @@ jobs:
       - name: Workshop Initial Step
         run: |
           echo "Hello World!"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - name: Install Dependencies
+        working-directory: "./python"
+        run: |
+          pip install --upgrade pip
+          pip install --upgrade poetry
+          poetry install
+
+      - name: Run Lint
+        working-directory: "./python"
+        continue-on-error: true
+        run: |
+          ruff check .
+
+      - name: Fix the Linter Findings
+        continue-on-error: true
+        run: |
+          ruff check --fix .
+
+      - name: Run Tests
+        working-directory: "./python"
+        if: ${{ inputs.run-tests }}
+        run: |
+          poetry run test
   
+      - name: Run Tests
+        working-directory: "./python"
+        run: |
+          poetry build
+
+      - name: Upload Artifact to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: fastapi-poetry-deploy-example-package
+          path: "python/dist/*"
+
+      - name: Publish Artifact
+        if: ${{ inputs.publish }}
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        with:
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          repository-url: "https://test.pypi.org/legacy/"
+          packages-dir: "python/dist/*"
+          attestations: true
+
+  ## NOTE: This section is for the second part of the Demo
   # build-container:
   #   name: Build the Python Container
-  #   if: ${{ github.event.inputs.containerized == 'true' }}
+  #   if: ${{ inputs.containerized }}
   #   uses: ./.github/workflows/build-container.yaml
   #   secrets:
   #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
   #   with:
-  #     python-version: ${{ env.PYTHON_VERSION }}
+  #     python-version: ${{ inputs.python-version }}
   #     push: true
+  
