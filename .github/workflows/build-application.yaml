@@ -89,11 +89,11 @@ jobs:
 
       - name: Publish Artifact
         if: ${{ inputs.publish }}
-        working-directory: "./python"
         uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
         with:
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           repository-url: "https://test.pypi.org/legacy/"
+          packages-dir: "python/dist/"
           attestations: true
 
   ## NOTE: This section is for the second part of the Demo
