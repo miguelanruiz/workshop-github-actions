@@ -88,12 +88,12 @@ jobs:
           attestations: true
 
   ## NOTE: This section is for the second part of the Demo
-  # build-container:
-  #   name: Build the Python Container
-  #   if: ${{ inputs.containerized }}
-  #   uses: ./.github/workflows/build-container.yaml
-  #   secrets:
-  #     DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
-  #   with:
-  #     publish: true
-  #     python-version: ${{ inputs.python-version }}
+  build-container:
+    name: Build the Python Container
+    if: ${{ inputs.containerized }}
+    uses: ./.github/workflows/build-container.yaml
+    secrets:
+      DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+    with:
+      publish: true
+      python-version: ${{ inputs.python-version }}
