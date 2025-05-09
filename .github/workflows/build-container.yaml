@@ -47,7 +47,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: docker.io/fastapi-poetry-deploy-example
+          images: docker.io/${{ vars.DOCKER_HUB_USERNAME }}/fastapi-poetry-deploy-example
           tags: |
             type=raw,value=0.4.0
             type=raw,value=latest
