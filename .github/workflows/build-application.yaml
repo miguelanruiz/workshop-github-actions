@@ -68,7 +68,7 @@ jobs:
         working-directory: "./python"
         if: ${{ inputs.run-tests }}
         run: |
-          poetry run tests
+          poetry run test
       - name: Run Build
         working-directory: "./python"
         run: |
