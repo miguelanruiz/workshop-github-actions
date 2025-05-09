@@ -8,7 +8,6 @@ sys.path.append(f"{PARENT_PATH}/src")
 
 
 from fastapi.testclient import TestClient
-from unittest.mock import patch
 from src.routers.router_health import router
 
 

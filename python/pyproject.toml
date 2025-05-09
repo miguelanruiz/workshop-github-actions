@@ -1,14 +1,14 @@
 [project]
-name = "fastapi-poetry-deploy-example"
+name = "fastapi-poetry-deploy-miguelan"
 description = "Example FastAPI Application for Testing Containerized Build and Deploy"
 license = { file = "../LICENSE" }
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 authors = [
-    { name = "Juan Caviedes", email = "juan.caviedes@neoris.com" },
+    { name = "Miguel Angel", email = "miguel.aruiz@neoris.com" },
 ]
 maintainers = [
-    { name = "Juan Caviedes", email = "juan.caviedes@neoris.com" },
+    { name = "Miguel Angel", email = "miguel.aruiz@neoris.com" },
 ]
 dynamic = [ "version" ]
 keywords = [ "packaging", "poetry" ]
