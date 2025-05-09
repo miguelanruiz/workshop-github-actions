@@ -28,7 +28,7 @@ documentation = "https://github.com/caprivm/workshop-github-actions/tree/main/py
 "Bug Tracker" = "https://github.com/caprivm/workshop-github-actions/issues"
 
 [tool.poetry]
-version = "0.4.1"
+version = "0.1.0"
 packages = [ { include = "tests" } ]
 
 [tool.poetry.dependencies]
