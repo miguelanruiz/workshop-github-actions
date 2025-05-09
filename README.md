@@ -19,6 +19,7 @@
     - Setup Python
     - Install Dependencies
     - Run Lint
+    - Fix Linter Findings
     - Run Tests
     - Run Build
     - Upload Package to the GitHub Run
@@ -28,11 +29,13 @@
   - Jobs in Parallel
   - Jobs in Sequence
   - Steps:
+    - Checkout Code
     - Docker Login
     - Add the Container Metadata
     - Setup Docker QEMU
     - Setup Docker Buildx
     - Build and Push
+    - Save Image to the GitHub Run
 - Demo pt. 3
   - Trigger a Workflow when a Pull Request is merged
   - Create a Release in the repository when the Pull Request is merged
@@ -68,3 +71,4 @@ Each of the Workshop sections is described in the following table.
 - Add a section with some points to do Workflow management
 - Add a section to explain how to [cache dependencies](https://github.com/actions/cache) in Python and improve the total execution time of a workflow
 - Add a section of how to configure and run the [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
+- Add a job to get the version to dynamically obtain the version from the `pyproject.toml` file
